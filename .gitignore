@@ -1,5 +1,5 @@
-vivado_project/ 
+vivado_project/*
 !vivado_project/*.xpr
-scala/
+scala/*
 !scala/*.sbt 
 !scala/src/
