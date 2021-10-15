@@ -87,8 +87,8 @@ module vga_top (
         .VS(vga_vs)
     );
 
-    reg [0:7] [7:0] vga_test_ram =  64'h001c3636363c301c;
-    logic vga_in = vga_test_ram[vga_y[2:0]][vga_x[2:0]];
+    reg [0:7] [7:0] vga_test_rom =  64'h001c3636363c301c;
+    logic vga_in = vga_test_rom[vga_y[2:0]][vga_x[2:0]];
     always_ff @( posedge clock ) begin
         if(reset) 
             color <= 0;
@@ -132,9 +132,9 @@ module  vga(
             h_count <= 0;
             v_count <= 0;
         end else begin 
-            h_count <= h_count == H_TOTAL-1 ? 0 : h_count + 1;
+            h_count <= (h_count == H_TOTAL-1) ? 0 : h_count + 1;
             if (h_count == H_TOTAL-1) begin
-                v_count <= v_count == V_TOTAL-1 ? 0 : v_count + 1;
+                v_count <= (v_count == V_TOTAL-1) ? 0 : v_count + 1;
             end
         end
     end
