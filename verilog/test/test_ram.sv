@@ -11,8 +11,9 @@ logic        a_en, b_en, a_write_en;
 logic [9:0]  a_addr, b_addr;
 logic [7:0]  a_wdata;
 logic [7:0]  a_rdata, b_rdata;
+logic [1:0]  test;
 
-ram1 ram(.*);
+ram ram1(.*);
 
 
 /////////////////////////////////////////
